@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# Editor fluff
+.vscode/
+
+# Build files
+Makefile
+*.make
+
+# Build output
+bin-int/
