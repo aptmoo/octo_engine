@@ -1,7 +1,11 @@
 #include <iostream>
 
+#include "GLFW/glfw3.h"
+
 int main(int argc, char const *argv[])
 {
-    std::cout << "Hello World!\n";
+    glfwInit();
+
+    glfwTerminate();
     return 0;
 }
