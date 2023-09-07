@@ -12,12 +12,17 @@ project "OctoEngine"
     files
     {
         "src/**.h",
-        "src/**.cpp"
+        "src/**.cpp",
+
+        "platform/generic/**.h",
+        "platform/generic/**.cpp"
     }
 
     includedirs
     {
         "src",
+
+        "%{wks.location}/Shared/",
         
         "%{wks.location}/Dependencies/",
         "%{wks.location}/Dependencies/glfw/include",
@@ -34,6 +39,7 @@ project "OctoEngine"
     filter "system:linux"
         libdirs { "/usr/lib/", "%{wks.location}/lib/" }
         links { "m", "dl" }
+        files { "platform/linux/**.h", "platform/linux/**.cpp" }
 
     filter "system:windows"
         libdirs { "%{wks.location}/lib/" }

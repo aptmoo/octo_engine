@@ -17,13 +17,15 @@ project "OctoShared"
 
     includedirs
     {
-        "./"
+        "./",
+
+        "{%wks.location}/Dependencies/spdlog/include/"
     }
 
     -- Linker
     links
     {
-
+        "spdlog"
     }
 
     -- Platform specific
