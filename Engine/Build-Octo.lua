@@ -20,9 +20,7 @@ project "OctoEngine"
 
     includedirs
     {
-        "src",
-
-        "%{wks.location}/Shared/",
+        "src/",
         
         "%{wks.location}/Dependencies/",
         "%{wks.location}/Dependencies/glfw/include",
