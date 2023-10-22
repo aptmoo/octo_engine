@@ -11,9 +11,13 @@ namespace octo
         LinuxWindow(const WindowDesc& desc);
         virtual ~LinuxWindow();
 
-                virtual void SetSize(u32 w, u32 h) override;
+        virtual void Update() override;
+
+        virtual void SetSize(i32 w, i32 h) override;
         virtual u32 GetWidth() override;
         virtual u32 GetHeight() override;
+
+        virtual bool ShouldClose() override;
 
         virtual void SetMode(WindowMode mode) override;
         virtual WindowMode GetMode() override;
@@ -22,6 +26,18 @@ namespace octo
     private:
         GLFWwindow* m_Window;
         GLFWmonitor* m_Monitor;
+
+        /*
+            Private copy of the data to avoid fetching window information multiple times per frame.
+        */
+        struct
+        {
+            std::string Title;
+            WindowMode Mode;
+            i32 Width;
+            i32 Height;
+        } m_WindowData;
+        
     };
 } // namespace octo
 

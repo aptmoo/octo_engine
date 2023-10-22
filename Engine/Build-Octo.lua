@@ -21,16 +21,18 @@ project "OctoEngine"
     includedirs
     {
         "src/",
+        "platform/",
         
         "%{wks.location}/Dependencies/",
         "%{wks.location}/Dependencies/glfw/include",
+        "%{wks.location}/Dependencies/glad/include/glad",
     }
 
     -- Linker
     links
     {
-        "OctoShared",
-        "GLFW"
+        "GLFW",
+        "glad"
     }
 
     -- Platform specific
