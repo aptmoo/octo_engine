@@ -1,10 +1,14 @@
 #include "linuxwindow.h"
 
+#include "common/exception.h"
+
+#include <iostream>
+
 namespace octo
 {
     /**
      * @brief The amount of windows created, used to init and deinit glfw.
-     * Only 8 bits, since your not really meant to create more than 2 windows, let alone more than 255
+     * Only 8 bits, since you are not really meant to create more than 2 windows, let alone more than 255
      *
      */
     static u8 s_WindowCount = 0;
@@ -13,8 +17,11 @@ namespace octo
     {
         if (s_WindowCount == 0)
         {
-            // TODO: Error handling
             int success = glfwInit();
+            if(!success)
+            {
+                throw WindowAPIInitException("GLFW failed to init!");
+            }
         }
 
         const GLFWvidmode *vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
@@ -25,11 +32,17 @@ namespace octo
         glfwWindowHint(GLFW_RESIZABLE, false);
 
         m_Window = glfwCreateWindow(desc.Width, desc.Height, desc.Title.c_str(), nullptr, nullptr);
+        if(!m_Window)
+        {
+            throw WindowAPIInitException("glfwCreateWindow returned NULL!");
+        }
         s_WindowCount++;
 
         m_WindowData.Height = desc.Height;
         m_WindowData.Width = desc.Width;
         m_WindowData.Title = desc.Title;
+
+        std::cout << glfwGetVersionString() << '\n';
     }
 
     LinuxWindow::~LinuxWindow()

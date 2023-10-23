@@ -15,17 +15,22 @@ project "OctoEngine"
         "src/**.cpp",
 
         "platform/generic/**.h",
-        "platform/generic/**.cpp"
+        "platform/generic/**.cpp",
+
+        -- TODO: Build settings
+        "platform/gl/**.h",
+        "platform/gl/**.cpp"
     }
 
     includedirs
     {
         "src/",
         "platform/",
+        "./",
         
         "%{wks.location}/Dependencies/",
         "%{wks.location}/Dependencies/glfw/include",
-        "%{wks.location}/Dependencies/glad/include/glad",
+        "%{wks.location}/Dependencies/glad/include/",
     }
 
     -- Linker
