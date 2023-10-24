@@ -59,8 +59,6 @@ namespace octo
     void LinuxWindow::Update()
     {
         glfwGetWindowSize(m_Window, &m_WindowData.Width, &m_WindowData.Height);
-
-        glfwSwapBuffers(m_Window);
         glfwPollEvents();
     }
 

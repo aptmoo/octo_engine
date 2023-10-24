@@ -7,6 +7,11 @@
 
 namespace octo
 {
+    static void GLMessageCallback(GLenum src, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* msg, const void*)
+    {
+        
+    }
+
     GLGraphicsDevice::GLGraphicsDevice(void* handle)
         : m_WindowHandle(handle)
     {
@@ -20,6 +25,10 @@ namespace octo
         }
 
         std::cout << glGetString(GL_VERSION) << '\n';
+
+        #ifndef NDEBUG
+        glEnable(GL_DEBUG_OUTPUT);
+        #endif
     }
 
     GLGraphicsDevice::~GLGraphicsDevice()
