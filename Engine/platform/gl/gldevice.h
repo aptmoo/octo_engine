@@ -14,6 +14,8 @@ namespace octo
         virtual void Clear(float r, float g, float b) override;
 
         virtual void Present() override;
+
+        void SetMinDebugSeverity(GraphicsDebugSeverity severity) override;
     private:
         void* m_WindowHandle;
     };

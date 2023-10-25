@@ -13,7 +13,7 @@ namespace octo
     GLVertexBuffer::GLVertexBuffer(void* data, u32 elements, BufferLayout& layout)
     {
         glCreateBuffers(1, &m_glID);
-        glNamedBufferStorage(m_glID, layout.GetStride(), data, GL_DYNAMIC_STORAGE_BIT);
+        glNamedBufferStorage(m_glID, layout.GetStride() * elements, data, GL_DYNAMIC_STORAGE_BIT);
     }
 
     GLVertexBuffer::~GLVertexBuffer()

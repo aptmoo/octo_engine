@@ -14,6 +14,13 @@ namespace octo
 
         virtual const BufferLayout& GetLayout() override { return m_Layout; };
         virtual void SetLayout(const BufferLayout& layout) override { m_Layout = layout; };
+
+        /**
+         * @brief Private function for vertex arrays.
+         * 
+         * @return u32 
+         */
+        u32 GetID(){ return m_glID; }
     private:
         BufferLayout m_Layout;
         u32 m_glID;
@@ -28,6 +35,13 @@ namespace octo
         virtual void SetData(const void* data, u32 elements, BufferElementType type) override;
 
         virtual u32 GetElementCount() override { return m_ElementCount; }
+
+        /**
+         * @brief Private function for vertex arrays.
+         * 
+         * @return u32 
+         */
+        u32 GetID(){ return m_glID; }
     private:
         u32 m_ElementCount;
         u32 m_glID;
