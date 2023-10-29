@@ -18,6 +18,12 @@ namespace octo
          */
         virtual void Present() = 0;
 
+        /**
+         * @brief Create a device using a window handle.
+         * 
+         * @param handle 
+         * @return Scope<GraphicsDevice> 
+         */
         static Scope<GraphicsDevice> Create(void* handle);
     };
 
