@@ -1,4 +1,4 @@
-project "glad"
+project "sokol"
     -- Language
     language "C"
 
@@ -10,15 +10,13 @@ project "glad"
     -- Input
     files
     {
-        "./glad/**.h",
-        "./glad/src/**.c"
+        "./sokol/**.h",
+        "./sokol/**.c"
     }
 
     includedirs
     {
-        "./glad/include",
-        "./glad/include/KHR",
-        "./glad/include/glad/"
+        "./sokol/",
     }
 
     -- Linker

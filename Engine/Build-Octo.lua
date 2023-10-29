@@ -18,8 +18,8 @@ project "OctoEngine"
         "platform/generic/**.cpp",
 
         -- TODO: Build settings
-        "platform/gl/**.h",
-        "platform/gl/**.cpp"
+        "platform/sg/**.h",
+        "platform/sg/**.cpp"
     }
 
     includedirs
@@ -30,20 +30,20 @@ project "OctoEngine"
         
         "%{wks.location}/Dependencies/",
         "%{wks.location}/Dependencies/glfw/include",
-        "%{wks.location}/Dependencies/glad/include/",
+        "%{wks.location}/Dependencies/sokol/",
     }
 
     -- Linker
     links
     {
         "GLFW",
-        "glad"
+        "sokol"
     }
 
     -- Platform specific
     filter "system:linux"
         libdirs { "/usr/lib/", "%{wks.location}/lib/" }
-        links { "m", "dl" }
+        links { "m", "dl", "GL" }
         files { "platform/linux/**.h", "platform/linux/**.cpp" }
 
     filter "system:windows"
