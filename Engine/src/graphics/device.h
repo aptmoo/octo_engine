@@ -13,6 +13,12 @@ namespace octo
         virtual ~GraphicsDevice() = default;
 
         /**
+         * @brief 
+         * 
+         */
+        virtual void Flush() = 0;
+
+        /**
          * @brief Present the back buffer.
          * 
          */

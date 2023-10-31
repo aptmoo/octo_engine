@@ -10,6 +10,7 @@ namespace octo
         SGDevice(void* handle);
         virtual ~SGDevice();
 
+        virtual void Flush() override;
         virtual void Present() override;
     private:
         void* m_WindowHandle;
