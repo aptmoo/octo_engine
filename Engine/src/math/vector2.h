@@ -152,12 +152,11 @@ namespace octo
         }
 
         /* Constants */
-        __Vector2Base<T> One() { return {1, 1}; }
-        __Vector2Base<T> ero() { return {0, 0}; }
+        inline static __Vector2Base<T> One() { return {1, 1}; }
+        inline static __Vector2Base<T> Zero() { return {0, 0}; }
 
-        __Vector2Base<T> Right() { return {0, 0}; }
-        __Vector2Base<T> Up() { return {0, 1}; }
-        __Vector2Base<T> Forward() { return {1, 0}; }
+        inline static __Vector2Base<T> Up() { return {0, 1}; }
+        inline static __Vector2Base<T> Forward() { return {1, 0}; }
     };
     
 } // namespace octo

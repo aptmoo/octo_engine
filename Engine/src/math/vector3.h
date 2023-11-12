@@ -171,12 +171,12 @@ namespace octo
         }
 
         /* Constants */
-        __Vector3Base<T> One() { return {1, 1, 1}; }
-        __Vector3Base<T> Zero() { return {0, 0, 0}; }
+        inline static __Vector3Base<T> One() { return {1, 1, 1}; }
+        inline static __Vector3Base<T> Zero() { return {0, 0, 0}; }
 
-        __Vector3Base<T> Right() { return {0, 0, 1}; }
-        __Vector3Base<T> Up() { return {0, 1, 0}; }
-        __Vector3Base<T> Forward() { return {1, 0, 0}; }
+        inline static __Vector3Base<T> Right() { return {0, 0, 1}; }
+        inline static __Vector3Base<T> Up() { return {0, 1, 0}; }
+        inline static __Vector3Base<T> Forward() { return {1, 0, 0}; }
     };
     
 } // namespace octo

@@ -46,4 +46,9 @@ namespace octo
     {
         glfwSwapBuffers((GLFWwindow*)m_WindowHandle);
     }
+
+    void SGDevice::Clear(Color color)
+    {
+        
+    }
 } // namespace octo

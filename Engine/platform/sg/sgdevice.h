@@ -12,6 +12,8 @@ namespace octo
 
         virtual void Flush() override;
         virtual void Present() override;
+
+        virtual void Clear(Color color) override;
     private:
         void* m_WindowHandle;
     };

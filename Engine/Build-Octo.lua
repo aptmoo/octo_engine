@@ -45,6 +45,7 @@ project "OctoEngine"
         libdirs { "/usr/lib/", "%{wks.location}/lib/" }
         links { "m", "dl", "GL" }
         files { "platform/linux/**.h", "platform/linux/**.cpp" }
+        targetname "OctoEngine.out"
 
     filter "system:windows"
         libdirs { "%{wks.location}/lib/" }
