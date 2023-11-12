@@ -3,23 +3,30 @@
 
 #include "GLFW/glfw3.h"
 
+#include <iostream>
+
 namespace octo
 {
-    static struct
+    void SGLogCallback(
+        const char *tag,              
+        uint32_t log_level,           
+        uint32_t log_item_id,         
+        const char *message_or_null,  
+        uint32_t line_nr,             
+        const char *filename_or_null, 
+        void *user_data)
     {
-        sg_buffer quadBuffer;
-    } device_state;
-    
-
-    void DrawFullscreenImage()
-    {
-
+        if(message_or_null)
+        {
+            std::cout << message_or_null << '\n';
+        }
     }
-    
-    SGDevice::SGDevice(void* handle)
+
+        SGDevice::SGDevice(void *handle)
         : m_WindowHandle(handle)
     {
         sg_desc apiDesc = {};
+        apiDesc.logger = sg_logger{SGLogCallback, nullptr};
         sg_setup(apiDesc);
 
         glfwMakeContextCurrent((GLFWwindow*)handle);

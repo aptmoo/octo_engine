@@ -47,13 +47,13 @@ namespace octo
         }
     }
 
-    void BufferLayout::AddElement(BufferElementType type, bool normalized)
+    void VertexBufferLayout::AddElement(BufferElementType type, bool normalized)
     {
         m_Elements.push_back({type, BufferElementTypeSize(type), normalized});
         m_Stride = 0;   // Hack to force recalculating strides when adding elements on the fly
     }
 
-    u32 BufferLayout::GetStride()
+    u32 VertexBufferLayout::GetStride()
     {
         if(m_Stride != 0)
             return m_Stride;

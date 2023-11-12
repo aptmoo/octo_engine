@@ -2,6 +2,7 @@
 #define GRAPHICS_BUFFERLAYOUT_H
 #include "common/types.h"
 #include <vector>
+#include <string>
 
 namespace octo
 {
@@ -47,7 +48,7 @@ namespace octo
         {}
     };
 
-    struct BufferLayout
+    struct VertexBufferLayout
     {
     public:
         /**
@@ -86,6 +87,26 @@ namespace octo
         u32 m_Stride = 0;
         std::vector<VertexBufferElement> m_Elements;
     };
+
+    struct UniformBufferElement
+    {
+        std::string Name;
+        BufferElementType Type;
+        u32 Offset;
+        u32 Size;
+        bool Normalized;
+    };
+
+    class UniformBufferLayout
+    {
+    public:
+        
+
+    private:
+        u32 m_Stride = 0;
+        std::vector<UniformBufferElement> m_Elements;
+    };
+
 } // namespace octo
 
 
