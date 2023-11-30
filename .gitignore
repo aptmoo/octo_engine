@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# Editor fluff
+*.vscode/
+
+# Premake generated files
+Makefile
+*.make
+
+# Intermidiary files
+./bin-int/*
