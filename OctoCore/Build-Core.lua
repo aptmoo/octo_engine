@@ -8,11 +8,14 @@ project "Core"
    files 
     {
         "Source/**.h", "Source/**.cpp",
+
+        "Vendor/spdlog/src/**.h", "Vendor/spdlog/src/**.cpp",
     }
 
    includedirs
    {
-      "Source"
+      "Source",
+      "Vendor/spdlog/include",
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
