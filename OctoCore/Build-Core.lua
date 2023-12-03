@@ -1,21 +1,18 @@
 project "Core"
    kind "StaticLib"
-   language "C++"
-   cppdialect "C++20"
+   language "C"
+   cdialect "C11"
    targetdir "Binaries/%{cfg.buildcfg}"
    staticruntime "off"
 
    files 
     {
-        "Source/**.h", "Source/**.cpp",
-
-        "Vendor/spdlog/src/**.h", "Vendor/spdlog/src/**.cpp",
+        "Source/**.h", "Source/**.c",
     }
 
    includedirs
    {
       "Source",
-      "Vendor/spdlog/include",
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")

@@ -1,11 +1,11 @@
 project "Sandbox"
    kind "ConsoleApp"
-   language "C++"
-   cppdialect "C++20"
+   language "C"
+   cdialect "C11"
    targetdir "Binaries/%{cfg.buildcfg}"
    staticruntime "off"
 
-   files { "Source/**.h", "Source/**.cpp" }
+   files { "Source/**.h", "Source/**.c" }
 
    includedirs
    {
