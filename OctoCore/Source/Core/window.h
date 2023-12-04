@@ -13,6 +13,16 @@ namespace name
 
     class Window
     {
+    public:
+        virtual ~Window() = default;
+
+        /**
+         * @brief Returns a handle to the native window.
+         * 
+         * @return void* 
+         */
+        virtual void* GetNativeHandle() = 0;
+    private:
 
     };
 } // namespace name
